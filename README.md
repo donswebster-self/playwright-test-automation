@@ -33,7 +33,8 @@ playwright-test-automation/
 ├── .env                        # The .env file is flagged in .gitignore
 ├── playwright.config.ts
 ├── package.json
-└── README.md
+├── README.md
+└── tsconfig.json
 ```
 
 ## Setup
@@ -73,8 +74,8 @@ npx playwright test tests/UI
 # Run by tag
 npx playwright test --grep "@smoke"
 
-# Run with HTML report
-npx playwright test show-report
+# View with HTML report
+npx playwright show-report
 ```
 
 ## Test Coverage
