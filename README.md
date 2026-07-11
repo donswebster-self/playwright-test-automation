@@ -1,6 +1,6 @@
 # Playwright Test Automation Framework
 
-A TypeScript-based testing framework for testing web applications and REST APIs.
+A TypeScript-based Playwright framework for automated web application testing.
 
 ## Overview
 
@@ -111,11 +111,11 @@ Tags: `@smoke` `@regression`
 
 ## Testing Methodology
 
-Tests are organized by layer (UI, API) and tagged for selective execution (`@smoke`, `@regression`). The Page Object Model pattern separates locator definitions and interaction logic from test assertions, keeping tests readable and maintainable as the suite grows.
+Tests are organized by layer (UI, with API planned) and tagged for selective execution (`@smoke`, `@regression`). The Page Object Model pattern separates locator definitions and interaction logic from test assertions, keeping tests readable and maintainable as the suite grows.
 
 ## About
 
-All framework and test code in this project is hand-written, drawing on 14 years of professional software quality engineering experience.
+This framework was designed and built from scratch, drawing on 14 years of professional software quality engineering experience.
 
 ## Author
 
