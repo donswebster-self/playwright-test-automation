@@ -3,6 +3,8 @@ import 'dotenv/config';
 
 export default defineConfig({
   testDir: './tests',
+  fullyParallel: true,
+  retries: 1,
 
   reporter: [['html', { open: 'on-failure' }]],
   

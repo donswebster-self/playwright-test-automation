@@ -10,7 +10,7 @@ The application under test is https://practicesoftwaretesting.com/ (Toolshop), a
 
 ## Current Status
 
-**Active Development** - Base and Home pages with HomePage validation tests.
+**Active Development** - Base, Home and Registration pages with HomePage and RegistrationPage validation tests.
 
 ## Features
 
@@ -26,10 +26,12 @@ The application under test is https://practicesoftwaretesting.com/ (Toolshop), a
 playwright-test-automation/
 ├── pages/
 │   ├── BasePage.ts
-│   └── HomePage.ts
+│   ├── HomePage.ts
+│   └── RegistrationPage.ts
 ├── tests/
 │   └── UI/
-│       └── HomePage.spec.ts
+│       ├── HomePage.spec.ts
+│       └── RegistrationPage.spec.ts
 ├── .env                        # The .env file is flagged in .gitignore
 ├── playwright.config.ts
 ├── package.json
@@ -89,18 +91,26 @@ npx playwright show-report
 6. Validate home page link attributes
 7. Validate home page banner image attributes
 
-Tags: `@smoke` `@regression`
+**RegistrationPage Tests ( 6 tests)** — `tests/UI/RegistrationPage.spec.ts`
+1. Validate registration page title
+2. Validate registration page loads successfully
+3. Validate registration page personal details attributes
+4. Validate registration page address attributes
+5. Validate registration page contact details attributes
+6. Validate registration page register button attributes
 
 ## Roadmap
 
-- [x] BasePage
-- [x] HomePage (POM)
-- [x] HomePage tests (smoke/regression)
-- [ ] Signin Page (POM)
-- [ ] Signin tests
-- [ ] CI/CD pipeline with GitHub Actions
-- [ ] REST API tests
-- [ ] Faker-based dynamic test data generation
+- ✅ BasePage
+- ✅ HomePage (POM)
+- ✅ HomePage tests (smoke/regression)
+- ✅ Registration Page (POM)
+- ✅ Registration tests
+- ⬜ Login Page (POM)
+- ⬜ Login tests
+- ⬜ CI/CD pipeline with GitHub Actions
+- ⬜ REST API tests
+- ⬜ Faker-based dynamic test data generation
 
 ## Technology Stack
 
