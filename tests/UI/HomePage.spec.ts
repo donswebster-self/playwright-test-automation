@@ -12,14 +12,14 @@
 import { test } from '@playwright/test';
 import { HomePage } from '../../pages/HomePage';
 
-let homePage: HomePage;
-
-test.beforeEach(async ({ page }) => {
-       await page.goto("/");
-       homePage = new HomePage(page);
-});
-
 test.describe('Home page tests', () => {
+
+       let homePage: HomePage;
+
+       test.beforeEach(async ({ page }) => {
+              await page.goto("/");
+              homePage = new HomePage(page);
+       });
 
        test('Validate home page title @smoke @regression', async () => {
               await homePage.expectTitle(/Practice Software Testing - Toolshop/);

@@ -10,11 +10,13 @@
  * 5) Validate address attributes
  * 6) Validate contact attributes
  * 7) Validate register button
+ * 8) Validate new customer registration
  * 
  */
 
 import { test } from '@playwright/test';
 import { RegistrationPage } from '../../pages/RegistrationPage';
+import { GenerateRandomData } from '../../utils/GenerateRandomData';
 
 test.describe('Registration page tests', () => {
 
@@ -47,6 +49,22 @@ test.describe('Registration page tests', () => {
 
     test('Validate registration page register button attributes @regression', async () => {
         await registrationPage.expectRegisterButtonAttributes();
+    });
+
+    test('Validate new customer registration @smoke @regression', async() => {
+        await registrationPage.setFirstName(GenerateRandomData.getFirstName());
+        await registrationPage.setLastName(GenerateRandomData.getLastName());
+        await registrationPage.setDateOfBirth(GenerateRandomData.getDateOfBirth());
+        await registrationPage.setCountry(GenerateRandomData.getCountry());
+        await registrationPage.setPostalCode(GenerateRandomData.getPostalCode());
+        await registrationPage.setHouseNumber(GenerateRandomData.getHouseNumber());
+        await registrationPage.setStreet(GenerateRandomData.getStreet());
+        await registrationPage.setCity(GenerateRandomData.getCity());
+        await registrationPage.setState(GenerateRandomData.getState());
+        await registrationPage.setPhone(GenerateRandomData.getPhone());
+        await registrationPage.setEmailAddress(GenerateRandomData.getEmailAddress());
+        await registrationPage.setPassword(GenerateRandomData.getPassword());
+        await registrationPage.registerCustomer();
     });
 
 })

@@ -9,8 +9,11 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@faker-js/faker": "^10.5.0",
     "@playwright/test": "^1.61.1",
+    "@types/luxon": "^3.7.2",
     "@types/node": "^26.1.0",
-    "dotenv": "^17.4.2"
+    "dotenv": "^17.4.2",
+    "luxon": "^3.7.2"
   }
 }

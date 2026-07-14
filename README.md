@@ -32,7 +32,9 @@ playwright-test-automation/
 │   └── UI/
 │       ├── HomePage.spec.ts
 │       └── RegistrationPage.spec.ts
-├── .env                        # The .env file is flagged in .gitignore
+├── utils/
+│   └── GenerateRandomData.ts
+├── .env                        # Not committed — see Environment Variables
 ├── playwright.config.ts
 ├── package.json
 ├── README.md
@@ -82,7 +84,7 @@ npx playwright show-report
 
 ## Test Coverage
 
-**HomePage Tests (7 tests)** — `tests/UI/HomePage.spec.ts`
+**HomePage Tests (7 tests)** - `tests/UI/HomePage.spec.ts`
 1. Validate home page title
 2. Validate home page loads successfully
 3. Validate home page sign-in link attributes
@@ -91,13 +93,14 @@ npx playwright show-report
 6. Validate home page link attributes
 7. Validate home page banner image attributes
 
-**RegistrationPage Tests ( 6 tests)** — `tests/UI/RegistrationPage.spec.ts`
+**RegistrationPage Tests (7 tests)** - `tests/UI/RegistrationPage.spec.ts`
 1. Validate registration page title
 2. Validate registration page loads successfully
 3. Validate registration page personal details attributes
 4. Validate registration page address attributes
 5. Validate registration page contact details attributes
 6. Validate registration page register button attributes
+7. Validate new customer registration with dynamic Faker data
 
 ## Roadmap
 
@@ -105,12 +108,13 @@ npx playwright show-report
 - ✅ HomePage (POM)
 - ✅ HomePage tests (smoke/regression)
 - ✅ Registration Page (POM)
-- ✅ Registration tests
+- ✅ Registration tests (smoke/regression)
+- ✅ New customer registration test with Faker-generated dynamic data (smoke/regression)
 - ⬜ Login Page (POM)
 - ⬜ Login tests
+- ⬜ Refactor test data - static JSON fixture for stable fields, Faker only where uniqueness matters (email), for reproducible failures
 - ⬜ CI/CD pipeline with GitHub Actions
 - ⬜ REST API tests
-- ⬜ Faker-based dynamic test data generation
 
 ## Technology Stack
 
@@ -118,6 +122,8 @@ npx playwright show-report
 - **TypeScript** - Core language
 - **Page Object Model (POM)** - Design pattern
 - **dotenv** - Environment configuration
+- **Faker** - Realistic dynamic test data generation
+- **Luxon** - Date/time formatting for test data
 
 ## Testing Methodology
 
