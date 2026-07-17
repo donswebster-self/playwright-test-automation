@@ -10,7 +10,7 @@ The application under test is https://practicesoftwaretesting.com/ (Toolshop), a
 
 ## Current Status
 
-**Active Development** - Base, Home and Registration pages with HomePage and RegistrationPage validation tests.
+**Active Development** - Base, Home, Login and Registration pages with HomePage, LoginPage and RegistrationPage validation tests.
 
 ## Features
 
@@ -27,10 +27,12 @@ playwright-test-automation/
 ├── pages/
 │   ├── BasePage.ts
 │   ├── HomePage.ts
+│   ├── LoginPage.ts
 │   └── RegistrationPage.ts
 ├── tests/
 │   └── UI/
 │       ├── HomePage.spec.ts
+│       ├── LoginPage.spec.ts
 │       └── RegistrationPage.spec.ts
 ├── utils/
 │   └── GenerateRandomData.ts
@@ -102,6 +104,16 @@ npx playwright show-report
 6. Validate registration page register button attributes
 7. Validate new customer registration with dynamic Faker data
 
+**LoginPage Tests (8 tests)** - `tests/UI/LoginPage.spec.ts`
+1. Validate login page title
+2. Validate login page loads successfully
+3. Validate login page Sign in with Google attributes
+4. Validate login page email address input field attributes
+5. Validate login page password input field attributes
+6. Validate login page register account link attributes
+7. Validate login page forgot password link attributes
+8. Validate user with correct credentials logs in successfully
+
 ## Roadmap
 
 - ✅ BasePage
@@ -110,8 +122,8 @@ npx playwright show-report
 - ✅ Registration Page (POM)
 - ✅ Registration tests (smoke/regression)
 - ✅ New customer registration test with Faker-generated dynamic data (smoke/regression)
-- ⬜ Login Page (POM)
-- ⬜ Login tests
+- ✅ Login Page (POM)
+- ✅ Login tests
 - ⬜ Refactor test data - static JSON fixture for stable fields, Faker only where uniqueness matters (email), for reproducible failures
 - ⬜ CI/CD pipeline with GitHub Actions
 - ⬜ REST API tests
