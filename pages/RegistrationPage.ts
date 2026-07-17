@@ -81,55 +81,32 @@ export class RegistrationPage extends BasePage {
         await expect(this.registerButton).toHaveAttribute('type', 'submit');
     }
 
-    async setFirstName(firstname: string) {
+    async registerCustomer(
+        firstname: string,
+        lastname: string,
+        dob: string,
+        country: string,
+        postalcode: string,
+        housenumber: string,
+        street: string,
+        city: string,
+        state: string,
+        phone: string,
+        email: string,
+        password: string
+    ) {
         await this.firstNameInput.fill(firstname);
-    }
-
-    async setLastName(lastname: string) {
         await this.lastNameInput.fill(lastname);
-    }
-
-    async setDateOfBirth(dob: string) {
         await this.dateOfBirthInput.fill(dob);
-    }
-
-    async setCountry(country: string) {
         await this.countryComboBox.selectOption(country);
-    }
-
-    async setPostalCode(postalcode: string) {
         await this.postalCodeInput.fill(postalcode);
-    }
-
-    async setHouseNumber(housenumber: string) {
         await this.houseNumberInput.fill(housenumber.toString());
-    }
-
-    async setStreet(street: string) {
         await this.streetInput.fill(street);
-    }
-
-    async setCity(city: string) {
         await this.cityInput.fill(city);
-    }
-
-    async setState(state: string) {
         await this.stateInput.fill(state);
-    }
-
-    async setPhone(phone: string) {
         await this.phoneInput.fill(phone);
-    }
-
-    async setEmailAddress(email: string) {
         await this.emailAddressInput.fill(email);
-    }
-
-    async setPassword(password: string) {
         await this.passwordInput.fill(password);
-    }
-
-    async registerCustomer() {
         await this.registerButton.click();
     }
 

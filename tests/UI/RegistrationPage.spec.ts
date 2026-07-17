@@ -19,8 +19,34 @@ import { RegistrationPage } from '../../pages/RegistrationPage';
 import { GenerateRandomData } from '../../utils/GenerateRandomData';
 
 test.describe('Registration page tests', () => {
-
     let registrationPage: RegistrationPage;
+    let firstName: string;
+    let lastName: string;
+    let dob: string;
+    let country: string;
+    let postalCode: string;
+    let houseNumber: string;
+    let street: string;
+    let city: string;
+    let state: string;
+    let phone: string;
+    let email: string;
+    let password: string;
+
+    test.beforeAll(async () => {
+        firstName = GenerateRandomData.getFirstName();
+        lastName = GenerateRandomData.getLastName();
+        dob = GenerateRandomData.getDateOfBirth();
+        country = GenerateRandomData.getCountry();
+        postalCode = GenerateRandomData.getPostalCode();
+        houseNumber = GenerateRandomData.getHouseNumber();
+        street = GenerateRandomData.getStreet();
+        city = GenerateRandomData.getCity();
+        state = GenerateRandomData.getState();
+        phone = GenerateRandomData.getPhone();
+        email = GenerateRandomData.getEmailAddress();
+        password = GenerateRandomData.getPassword();
+    });
 
     test.beforeEach(async ({ page }) => {
         await page.goto("/auth/register");
@@ -51,20 +77,9 @@ test.describe('Registration page tests', () => {
         await registrationPage.expectRegisterButtonAttributes();
     });
 
-    test('Validate new customer registration @smoke @regression', async() => {
-        await registrationPage.setFirstName(GenerateRandomData.getFirstName());
-        await registrationPage.setLastName(GenerateRandomData.getLastName());
-        await registrationPage.setDateOfBirth(GenerateRandomData.getDateOfBirth());
-        await registrationPage.setCountry(GenerateRandomData.getCountry());
-        await registrationPage.setPostalCode(GenerateRandomData.getPostalCode());
-        await registrationPage.setHouseNumber(GenerateRandomData.getHouseNumber());
-        await registrationPage.setStreet(GenerateRandomData.getStreet());
-        await registrationPage.setCity(GenerateRandomData.getCity());
-        await registrationPage.setState(GenerateRandomData.getState());
-        await registrationPage.setPhone(GenerateRandomData.getPhone());
-        await registrationPage.setEmailAddress(GenerateRandomData.getEmailAddress());
-        await registrationPage.setPassword(GenerateRandomData.getPassword());
-        await registrationPage.registerCustomer();
+    test('Validate new customer registration @smoke @regression', async ({page}) => {
+        await registrationPage.registerCustomer(firstName, lastName, dob, country, postalCode, houseNumber, street, city, state, phone, email, password);
+        await page.waitForURL(/auth\/login/);
     });
 
 })

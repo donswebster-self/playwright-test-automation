@@ -40,7 +40,7 @@ export class GenerateRandomData {
     }
 
     static getPhone(): string {
-        return faker.phone.number();
+        return faker.string.numeric(10); // Using string.numeric() to generate 10-digit only values for phone numbers (excluding extensions)
     }
 
     static getEmailAddress(): string {
@@ -48,6 +48,6 @@ export class GenerateRandomData {
     }
 
     static getPassword(): string {
-        return faker.internet.password({length: 8});
+        return faker.internet.password({length: 6}) + '1!'; // Appends digit and symbol to satisfy site's password complexity rules
     }
 }
