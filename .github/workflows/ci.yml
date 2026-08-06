@@ -32,8 +32,6 @@ jobs:
 
       - name: Run tests
         run: npx playwright test
-        env:
-          APP_URL: ${{ secrets.APP_URL }}
 
       - name: Upload Playwright report
         if: ${{ !cancelled() }}
