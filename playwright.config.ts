@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: [['html', { open: 'on-failure' }]],
 
   use: {
-    baseURL: process.env.APP_URL ?? 'https://practicesoftwaretesting.com',
+    baseURL: process.env.APP_URL || 'https://practicesoftwaretesting.com',
     testIdAttribute: 'data-test',
     trace: 'on-first-retry',
   },
