@@ -10,7 +10,8 @@ export default defineConfig({
 
   use: {
     baseURL: process.env.APP_URL ?? 'https://practicesoftwaretesting.com',
-    testIdAttribute: 'data-test'
+    testIdAttribute: 'data-test',
+    trace: 'on-first-retry',
   },
 
   projects: [
