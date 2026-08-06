@@ -10,7 +10,7 @@ The application under test is https://practicesoftwaretesting.com/ (Toolshop), a
 
 ## Current Status
 
-**Active Development** - Base, Home, Login and Registration pages with HomePage, LoginPage and RegistrationPage validation tests.
+**Active Development** - BasePage plus HomePage, LoginPage, and RegistrationPage POMs with validation and flow tests.
 
 ## Features
 
@@ -124,8 +124,8 @@ npx playwright show-report
 - ✅ New customer registration test with Faker-generated dynamic data (smoke/regression)
 - ✅ Login Page (POM)
 - ✅ Login tests
+- ✅ CI/CD pipeline with GitHub Actions
 - ⬜ Refactor test data - static JSON fixture for stable fields, Faker only where uniqueness matters (email), for reproducible failures
-- ⬜ CI/CD pipeline with GitHub Actions
 - ⬜ REST API tests
 
 ## Technology Stack
