@@ -4,13 +4,13 @@ import 'dotenv/config';
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  retries: 1,
+  retries: process.env.CI ? 2 : 0,
 
   reporter: [['html', { open: 'on-failure' }]],
-  
+
   use: {
-    baseURL: process.env.APP_URL,
-    testIdAttribute: 'data-test',
+    baseURL: process.env.APP_URL ?? 'https://practicesoftwaretesting.com',
+    testIdAttribute: 'data-test'
   },
 
   projects: [
